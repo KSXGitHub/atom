@@ -16,7 +16,7 @@
   "dependencies": {
     "async": "0.2.6",
     "atom-keymap": "^6.2.0",
-    "babel-core": "^5.8.21",
+    "babel-core": "^6.9.0",
     "bootstrap": "^4.0.0",
     "cached-run-in-this-context": "0.4.1",
     "clear-cut": "^2.0.1",
@@ -34,7 +34,7 @@
     "jasmine-tagged": "^1.1.4",
     "jquery": "^2.1.1",
     "key-path-helpers": "^0.4.0",
-    "less-cache": "0.22",
+    "less-cache": "0.24.0",
     "marked": "^0.3.4",
     "normalize-package-data": "^2.0.0",
     "nslog": "^3",
@@ -55,7 +55,8 @@
     "text-buffer": "8.1.2",
     "typescript-simple": "1.0.0",
     "underscore-plus": "^1.6.6",
-    "yargs": "^3.23.0"
+    "yargs": "^3.23.0",
+    "snyk": "^1.88.0"
   },
   "packageDependencies": {
     "atom-dark-syntax": "0.27.0",
@@ -152,6 +153,9 @@
   "private": true,
   "scripts": {
     "preinstall": "node -e 'process.exit(0)'",
-    "test": "node script/test"
-  }
+    "test": "node script/test",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }
