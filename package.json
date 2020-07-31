@@ -55,7 +55,8 @@
     "text-buffer": "8.1.2",
     "typescript-simple": "1.0.0",
     "underscore-plus": "^1.6.6",
-    "yargs": "^3.23.0"
+    "yargs": "^3.23.0",
+    "snyk": "^1.369.2"
   },
   "packageDependencies": {
     "atom-dark-syntax": "0.27.0",
@@ -152,6 +153,9 @@
   "private": true,
   "scripts": {
     "preinstall": "node -e 'process.exit(0)'",
-    "test": "node script/test"
-  }
+    "test": "node script/test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
